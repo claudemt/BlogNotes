@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BlogNotes</title><link rel="stylesheet" href="/static/style.css?v=__UI_REV__">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand"><strong>BlogNotes</strong></div>
+    <div class="top-actions"><span id="account-state" class="muted"></span><button id="account-btn">账号</button><button id="help-btn">帮助</button><button id="open-dir">目录</button></div>
+  </header>
+  <div id="float" class="banner-area" aria-live="polite" aria-atomic="false"></div>
+  <div class="platform-tabs" role="tablist"><button class="platform active" data-platform="xhs">小红书</button><button class="platform" data-platform="zhihu">知乎</button></div>
+  <div id="profile-strip" class="profile-strip" hidden></div>
+  <div class="tabline"><div class="state-tabs"><button data-state="published">已发布 <span id="published-count">0</span></button><button data-state="draft" class="active">未发布 <span id="draft-count">0</span></button></div><div class="actions"><button id="refresh-btn" class="primary">刷新</button><button id="new-btn">新建</button></div></div>
+  <main class="panel"><div class="toolbar"><input id="search" type="search" placeholder="搜索"><span class="muted" id="count"></span><button id="select-btn">全选</button><button id="batch-btn" class="primary" disabled>批量</button><button id="import-all-btn" hidden>导入全部</button></div><div id="batch-strip" class="batch-strip" hidden></div><div class="list-head"><span>笔记</span><span>时间</span><span>互动</span></div><div id="note-list" class="list"></div><div class="panel-foot"><span id="last-sync"></span><span id="quota-status"></span></div></main>
+</div>
+<div id="editor-overlay" class="overlay" hidden>
+  <section class="modal" role="dialog" aria-modal="true" aria-label="笔记详情">
+    <header class="modal-head"><div><div id="detail-state" class="sub muted"></div><h2 id="detail-title"></h2></div><button class="close" id="editor-close" aria-label="关闭">×</button></header>
+    <div class="modal-scroll">
+      <div class="editor-layout">
+        <div class="media"><div id="hero" class="hero"></div><div id="image-list" class="image-list"></div><label class="button upload-button">加图<input id="upload-input" type="file" accept="image/*,.heic,.heif" multiple hidden></label></div>
+        <div class="document"><div class="document-toolbar"><div id="md-toolbar" class="md-toolbar" hidden></div><span id="save-state" class="muted"></span></div><div class="editor-split"><textarea id="body-editor" spellcheck="false" placeholder="正文"></textarea><div id="body-preview" class="body-preview"></div></div><div id="issues" class="issues" hidden></div></div>
+      </div>
+      <section id="stats-section" hidden><div class="section-head"><strong>互动</strong><span id="stats-time" class="muted"></span></div><div id="stat-grid" class="stats"></div><div class="chart-bar"><div class="switch" id="metric-switch"></div><div class="switch" id="range-switch"></div></div><div class="chart-bar"><div class="switch" id="mode-switch"></div></div><div id="chart" class="chart"></div></section>
+      <section id="comments-section" hidden><div class="section-head"><strong>评论</strong><span id="comments-state" class="muted"></span></div><div id="comment-list" class="comments"></div></section>
+    </div>
+    <footer class="modal-foot"><span class="muted" id="file-info"></span><div class="actions" id="detail-actions"></div></footer>
+  </section>
+</div>
+<div id="account-overlay" class="overlay" hidden>
+  <section class="account-dialog" role="dialog" aria-modal="true" aria-label="账号"><div class="modal-head"><h2>账号 · <span id="account-platform"></span></h2><button class="close" id="account-close">×</button></div>
+  <div id="xhs-account" class="account-body"><p class="muted" id="xhs-account-status"></p><p class="muted warning" id="xhs-partial" hidden></p><div id="xhs-profile-data" class="account-profile"></div><button id="xhs-login" class="primary">登录</button><button id="xhs-check">校验</button></div>
+  <div id="zhihu-account" class="account-body" hidden><p class="muted" id="zhihu-account-status"></p><label>App Key<input id="zhihu-key" autocomplete="off" placeholder="知乎 URLToken"></label><label>App Secret<input id="zhihu-secret" type="password" autocomplete="new-password" placeholder="Publisher OpenAPI"></label><label>Access Secret<input id="zhihu-access" type="password" autocomplete="new-password" placeholder="数据开放平台"></label><button class="primary" id="zhihu-save">保存</button><button id="zhihu-help">帮助</button></div>
+  </section>
+</div>
+<div id="help-overlay" class="overlay" hidden><section class="account-dialog help-dialog" role="dialog" aria-modal="true" aria-label="帮助"><header class="modal-head"><h2>帮助</h2><button id="help-close" class="close" aria-label="关闭">×</button></header><div class="account-body" id="help-body"></div></section></div>
+<div id="new-overlay" class="overlay" hidden><section class="account-dialog" role="dialog" aria-modal="true" aria-label="新建笔记"><div class="modal-head"><h2>新建</h2><button class="close" id="new-close">×</button></div><div class="account-body"><input id="new-title" placeholder="笔记名称" maxlength="100"><button id="new-confirm" class="primary">创建</button></div></section></div>
+<script defer src="/static/app.js?v=__UI_REV__"></script>
+</body></html>

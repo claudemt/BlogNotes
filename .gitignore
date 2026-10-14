@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+runtime/
+xhs/
+zhihu/
+content/
+config/config.json
+*.log
+.DS_Store

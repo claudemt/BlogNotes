@@ -1,0 +1,11 @@
+{
+  "host": "127.0.0.1",
+  "port": 8767,
+  "cdp_port": 9237,
+  "chrome_path": "",
+  "sync_interval_hours": 6,
+  "xhs_login_cache_ttl_hours": 12,
+  "image_limit": 18,
+  "daily_publish_limit": 6,
+  "publish_min_interval_minutes": 60
+}
